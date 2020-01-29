@@ -1,2 +1,2 @@
 # k8s-workshop
-Kubernetes workship
+Kubernetes workshop
