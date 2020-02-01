@@ -4,7 +4,7 @@ No you know how to get information from kubernetes using kubectl(k), but much of
 
 # Tasks
 
-## 1. Differen ways to view kubectl config
+## 1. Different ways to view kubectl config
 We can use any of the previous mentioned
 ```
 $ k config current-context

@@ -14,7 +14,7 @@ Kubernetes workshop
 1. [Install required components](./1-installation.md)
 2. [Query kubernetes cluster for info](./2-kubernetes-cluster.md)
 3. [Get kubernetes dashboard running](./3-kubernetes-dashboard.md)
-4. Deploy a simple app to minikube - FRODE
+4. [Deploy a simple app to minikube](./4-deploy-app.md)
 5. Query app for info - FRODE
 6. Delete pod, replicaset, deployment - FRODE
 7. Understanding services
