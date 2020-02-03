@@ -52,6 +52,19 @@ NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 kubernetes-bootcamp   1/1     1            1           8m25s
 ```
 
+#### Deployments
+So what really happened when we ran the `create deployment` command earlier? A pod was created. Read more about [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/), to get a better understanding of it.
+Deployments are responsible for managing the lifetime of application containers. These kinds of resources are called controllers, and they are central to the Kubernetes puzzle. You can get more detailed info about the new deployment with
+```
+$ k describe deployment kubernetes-bootcamp
+```
+
+The `describe` command can be used many places with kubectl, like
+```
+$ k describe pods
+$ k describe nodes
+```
+
 #### Curl the application
 We can use `kubectl` to create a proxy that will forward communications into the cluster-wide, private network.
 Open a second terminal window to run the proxy:
