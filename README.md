@@ -15,7 +15,7 @@ Kubernetes workshop
 2. [Query kubernetes cluster for info](./2-kubernetes-cluster.md)
 3. [Get kubernetes dashboard running](./3-kubernetes-dashboard.md)
 4. [Deploy a simple app to minikube](./4-deploy-app.md)
-5. Query app for info - FRODE
+5. [Debugging app](./5-debugging-app.md)
 6. Delete pod, replicaset, deployment - FRODE
 7. Understanding services
 8. Ingress
