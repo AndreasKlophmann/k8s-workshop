@@ -16,7 +16,7 @@ Kubernetes workshop
 3. [Get kubernetes dashboard running](./3-kubernetes-dashboard.md)
 4. [Deploy a simple app to minikube](./4-deploy-app.md)
 5. [Debugging app](./5-debugging-app.md)
-6. Delete pod, replicaset, deployment - FRODE
+6. [Delete pods and deployment](./6-delete-resources.md)
 7. Understanding services
 8. Ingress
 9. Rolling updates / scaling etc
