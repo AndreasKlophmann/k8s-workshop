@@ -38,6 +38,8 @@ We'll use `k create deployment` to create an deployment. After running the comma
 ```
 $ k create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
+
+#### Logs
 You can also check the logs from the pod by running the following commands:
 ```
 $ k get pods
@@ -49,4 +51,46 @@ $ k get deployments
 NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 kubernetes-bootcamp   1/1     1            1           8m25s
 ```
+
+#### Curl the application
+We can use `kubectl` to create a proxy that will forward communications into the cluster-wide, private network.
+Open a second terminal window to run the proxy:
+
+```
+$ k proxy
+```
+
+This enables a connection between our host and the Kubernetes cluster. Let's check if we can curl the application
+
+```
+$ curl http://localhost:8001/version
+{
+  "major": "1",
+  "minor": "16",
+  "gitVersion": "v1.16.2",
+  "gitCommit": "c97fe5036ef3df2967d086711e6c0c405941e14b",
+  "gitTreeState": "clean",
+  "buildDate": "2019-10-15T19:09:08Z",
+  "goVersion": "go1.12.10",
+  "compiler": "gc",
+  "platform": "linux/amd64"
+}
+```
+
+The API server will automatically create an endpoint for each pod, based on the pod name, that is also accessible through the proxy.
+
+So let's try to get the pod name
+```
+$ export POD_NAME=$(k get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+$ echo Name of the Pod: $POD_NAME
+kubernetes-bootcamp-69fbc6f4cf-4wpsf
+```
+
+Try to split these last commands into smaller commands and understand what we do here. 
+You can use the following commands to get some info about his
+```
+$ k get pods -o wide
+$ k get pods -o json
+```
+
 
