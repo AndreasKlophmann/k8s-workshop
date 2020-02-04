@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: k8s-workshop-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: test.info
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: kubernetes-bootcamp
+              servicePort: 8080

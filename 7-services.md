@@ -1,6 +1,6 @@
 # Introduction
 
-In the previous sections we have learned how Deployments control how pods are created for our application and that it even defines how many replicas we should have and how pods are distributed on our nodes. But we still need to solve how we're goning to route traffic to our app and load balance between the replicas. And for that we need Services.
+In the previous sections we have learned how Deployments control how pods are created for our application and that it even defines how many replicas we should have and how pods are distributed on our nodes. But we still need to solve how we're going to route traffic to our app and load balance between the replicas. And for that we need Services.
 
 # Tasks
 
