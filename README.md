@@ -17,7 +17,7 @@ Kubernetes workshop
 4. [Deploy a simple app to minikube](./4-deploy-app.md)
 5. [Debugging app](./5-debugging-app.md)
 6. [Delete pods and deployment](./6-delete-resources.md)
-7. Understanding services
+7. [Understanding services](./7-services.md)
 8. Ingress
 9. Rolling updates / scaling etc
 10. Extras 

@@ -39,7 +39,7 @@ If you wonder what kubectl is actually doing here, you can try to add the option
 
 ## 3. Deploy application
 
-To deploy our app we will create what is known as a Deployment in kubernetes. In a Deployment (represented by a yaml file)
+To deploy our app we will create what is known as a Deployment in kubernetes. In a Deployment (represented by a yaml manifest file)
 we describe a desired state for our application, and the deployment controller will make it so. The only thing we need to
 do is to instruct it to apply it for us using `kubectl apply -f deployment.yaml`
 

@@ -61,7 +61,7 @@ If we want to get inside the kubernetes cluster but don't want to attach directl
 image in a separate pod ad automatically delete it after we're finished:
 
 ```
-$ k run -it --rm --restart=Never alpine --image=alpine sh
+$ k run -it --rm --restart=Never testing --image=cfmanteiga/alpine-bash-curl-jq bash
 ```
 
 ## 5. Port forwarding to pods
