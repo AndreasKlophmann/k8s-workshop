@@ -6,7 +6,14 @@ explore a bit around the concepts of nodes and namespaces.
 # Tasks
 
 ## 1. Improve kubectl installation
-Like many other [people](https://www.youtube.com/watch?v=2wgAIvXpJqU) we do not know how to pronounce 'kubectl' so for the rest of this workshop we'll just do the following: `alias k='kubectl'`
+Like many other [people](https://www.youtube.com/watch?v=2wgAIvXpJqU) we do not know how to pronounce 'kubectl' 
+so for the rest of this workshop we'll just do the following:
+
+Add the following to your `.zshrc / .bashrc /.bash_profile`: 
+```
+alias k=“kubectl”
+complete -o default -F __start_kubectl k
+```
 
 There are [many](https://github.com/ahmetb/kubectl-aliases) possible aliases...    
 
@@ -62,10 +69,4 @@ Fetch pods in qa context: `$ k get pods --context qa`
 - Get the status of minikube, also which addons are running or not
 - Make sure minikube is running on the latest version of Kubernetes
 - Find the kubectl config file and look at it
-- Make sure autocompletion works for kubectl
-
-
-
-## Resources
-
-- [The Illustrated Children's Guide to Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno)
+- Make sure auto completion works for kubectl
