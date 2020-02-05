@@ -1,12 +1,17 @@
 # Introduction
 
-In the previous sections we have learned how Deployments control how pods are created for our application and that it even defines how many replicas we should have and how pods are distributed on our nodes. But we still need to solve how we're going to route traffic to our app and load balance between the replicas. And for that we need Services.
+In the previous sections we have learned how Deployments control how pods are created for our application and that it 
+even defines how many replicas we should have and how pods are distributed on our nodes. 
+But we still need to solve how we're going to route traffic to our app and load balance between the replicas. 
+And for that we need Services.
 
 # Tasks
 
 ## 1. Service
 
-[Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/) is an abstraction that allows loose coupling of pods to enable load balancing, discovery and routing. We can expose our application as a service using `kubectl expose`:
+[Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/) is an abstraction that allows 
+loose coupling of pods to enable load balancing, discovery and routing. 
+We can expose our application as a service using `kubectl expose`:
 
 ```
 $ k expose deploy kubernetes-bootcamp
@@ -26,7 +31,9 @@ $ k expose -f 4-kubernetes-bootcamp.yaml
 
 ## 2. Load balancing
 
-The IP-address listed next to our service is a special kind of address. It is a virtual IP-address. It doesn't point to one specific pod but to a service that can consist of multiple pods. This way we can achieve both load balancing and high availability!
+The IP-address listed next to our service is a special kind of address. It is a virtual IP-address. 
+It doesn't point to one specific pod but to a service that can consist of multiple pods. 
+This way we can achieve both load balancing and high availability!
 
 ```
 $ k get services
@@ -56,11 +63,14 @@ $ curl http://10.96.80.156:8080
 
 ## 3. Manifest files
 
-We have briefly looked at manifest files which is the declarative way to interface with Kubernetes (kubectl being the command line interface). This is the preferred way to build, store and share kubernetes setup and adheres to the principle of infrastructure as code.
+We have briefly looked at manifest files which is the declarative way to interface with Kubernetes (kubectl being the command line interface). 
+This is the preferred way to build, store and share kubernetes setup and adheres to the principle of infrastructure as code.
 
-A manifest file (yaml or json) can contain multiple resources of different kinds together with metadata and spec. The different entries must be separated by triple dash separator which signifies the start of a new document in yaml.
+A manifest file (yaml or json) can contain multiple resources of different kinds together with metadata and spec. 
+The different entries must be separated by triple dash separator which signifies the start of a new document in yaml.
 
-The resource specifications are documented in great detail in the [Kubernetes API documentation](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/). In addtion the `kubectl` command is self documenting using `kubectl explain`:
+The resource specifications are documented in great detail in the [Kubernetes API documentation](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/). 
+In addition the `kubectl` command is self documenting using `kubectl explain`:
 
 ```
 $ k explain pods
@@ -95,7 +105,9 @@ DESCRIPTION:
 
 ## 4. Selectors
 
-If we take a look at the sample manifest file in `7-kubernetes-bootcamp.yaml` we can see that the only thing connecting the service definition to deployment definition is the line below `selectors` in the service which is identical to the first line under `labels` in the deployment:
+If we take a look at the sample manifest file in `7-kubernetes-bootcamp.yaml` we can see that the only thing 
+connecting the service definition to deployment definition is the line below `selectors` in the service which 
+is identical to the first line under `labels` in the deployment:
 
 ```
 labels:
@@ -105,7 +117,10 @@ selector:
   app: kubernetes-bootcamp
 ```
 
-The service selector tells kubernetes which pods to include in the service. This selector-based mechanism is used by many components in Kubernetes, and it is very versatile in that it allows custom labels. This opens up a whole lot of possibilities for different patterns, such as A/B deployments, rolling updates (which we will see later) and similar things.
+The service selector tells kubernetes which pods to include in the service. This selector-based mechanism is used by 
+many components in Kubernetes, and it is very versatile in that it allows custom labels. 
+This opens up a whole lot of possibilities for different patterns, such as A/B deployments, 
+rolling updates (which we will see later) and similar things.
 
 You can use selectors to filter the results in many `kubectl` commands using the `--selector=` og just `-l`:
 

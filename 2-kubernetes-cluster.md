@@ -59,8 +59,8 @@ Fetch pods in qa context: `$ k get pods --context qa`
 
 ## Extra challenges
 
-- Try to delete and reinstall Minikube
-- Create a new cluster in Minikube and make sure it is on the latest version of Kubernetes
+- Get the status of minikube, also which addons are running or not
+- Make sure minikube is running on the latest version of Kubernetes
 - Find the kubectl config file and look at it
 - Make sure autocompletion works for kubectl
 

@@ -1,6 +1,6 @@
 # Introduction
 
-Now we got our service running in the cluster, we can curl it using the service name and the port inside a one-of running pod
+Now we got our service running in the cluster, we can curl it using the service name and the port inside a one-of running pod.
 
 ```
 $ k run -it --rm --restart=Never testing --image=cfmanteiga/alpine-bash-curl-jq bash
@@ -13,9 +13,20 @@ We need to tell Kubernetes to route HTTP requests from the outside to a certain 
 
 This process is called [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
 
+### What is Ingress?
+Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. 
+Traffic routing is controlled by rules defined on the Ingress resource.
+
+An Ingress can be configured to give Services externally-reachable URLs, load balance traffic, terminate SSL / TLS, 
+and offer name based virtual hosting. An Ingress controller is responsible for fulfilling the Ingress, usually with a load balancer, 
+though it may also configure your edge router or additional frontends to help handle the traffic.
+
+An Ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet 
+typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer
+
 # Tasks
 
-## 1. Ingress controller
+## 1. Install the ingress controller
 The ingress controller is a reverse proxy running within Kubernetes.
 so we need to enable the extension inside `minikube`
 
@@ -44,4 +55,3 @@ $ k expose deployment web2 --target-port=8080 --type=NodePort
 ### Challenges 
 * add this deploy to the ingress.yaml and apply it
 * find the two different ``curl`` commands to run to hit the two different deploys
-* test and open the addresses in the browser

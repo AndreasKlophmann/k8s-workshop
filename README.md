@@ -18,7 +18,7 @@ Kubernetes workshop
 5. [Debugging app](./5-debugging-app.md)
 6. [Delete pods and deployment](./6-delete-resources.md)
 7. [Understanding services](./7-services.md)
-8. Ingress
+8. [Ingress](./8-ingress.md)
 9. Rolling updates / scaling etc
-10. Extras 
+10. Extras - livenessProbe/readinessProbe, affinity
 

@@ -25,7 +25,8 @@ $ k get nodes
 ```
 
 ### Namespaces
-Namespaces provide a means to separate subclusters conceptually from each other. It can for example be one namespace per application or per team. If no namespace is defined the resource is placed in the `default` namespace. 
+Namespaces provide a means to separate subclusters conceptually from each other. It can for example be one namespace per application or per team.
+If no namespace is defined the resource is placed in the `default` namespace. 
 The advantage of using namespaces are for example:
 - Avoiding name clashes
 - Limit resource allocation
@@ -63,10 +64,12 @@ If the kubernetes-dashboard is running you will see it.
 
 ### Explore the dashboard
 
-Read about the Kubernetes dashboard [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) and explore it on you local minikube installation.
+Read about the Kubernetes dashboard [here](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) 
+and explore it on you local minikube installation.
 
 
 ## Extra challenges
 
-- Follow the guide to create deploy kubernetes dashboard locally to minikube: [k8s](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+- Read about how to deploy kubernetes dashboard locally to minikube: 
+[k8s dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
