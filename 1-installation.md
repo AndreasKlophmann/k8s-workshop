@@ -13,7 +13,7 @@ Read the instructions on how to install Minikube [here](https://kubernetes.io/do
 
 ```
 $ brew install minikube
-$ brew start minikube
+$ minikube start
 ```
 
 ### Verify Minikube installation
