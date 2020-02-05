@@ -43,10 +43,10 @@ To deploy our app we will create what is known as a Deployment in kubernetes. In
 we describe a desired state for our application, and the deployment controller will make it so. The only thing we need to
 do is to instruct it to apply it for us using `kubectl apply -f deployment.yaml`
 
-Please take a look at [4-kubernetes-bootcamp.yaml](4-kubernetes-bootcamp.yaml) for the description of our sample application.
+Please take a look at [4-deploy-app.yaml](4-deploy-app.yaml) for the description of our sample application.
 
 ```
-$ k apply -f 4-kubernetes-bootcamp.yaml
+$ k apply -f 4-deploy-app.yaml
 ```
 
 The deployment controller will create a new pod for us a start the specified docker image inside it.
@@ -60,7 +60,7 @@ $ k get deployments
 You can get more details about our deployment by running:
 
 ```
-$ k describe deployment kubernetes-bootcamp
+$ k describe deployment k8s-workshop
 ```
 
 The `describe` command can be used many places with kubectl, like:
@@ -102,7 +102,7 @@ The API server will automatically create a proxy for each pod, based on the pod 
 We can access it locally using the following url (replacing <podname> with the actual name of the pod):
 
 ```
-http://localhost:8001/api/v1/namespaces/default/pods/<podname>/proxy/
+$ curl http://localhost:8001/api/v1/namespaces/default/pods/<podname>/proxy/
 ```
 
 

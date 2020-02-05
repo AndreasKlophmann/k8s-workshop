@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubernetes-bootcamp
+  name: k8s-workshop
 spec:
   replicas: 1
   selector:
    matchLabels:
-     app: kubernetes-bootcamp
+     app: k8s-workshop
   template:
     metadata:
       labels:
-        app: kubernetes-bootcamp
+        app: k8s-workshop
     spec:
       containers:
         - name: kubernetes-bootcamp
