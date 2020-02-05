@@ -4,8 +4,8 @@ Now we got our service running in the cluster, we can curl it using the service 
 
 ```
 $ k run -it --rm --restart=Never testing --image=cfmanteiga/alpine-bash-curl-jq bash
-$ curl http://kubernetes-bootcamp:8080
-Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-6d64485df4-dbpnz | v=1
+$ curl http://k8s-workshop:8080
+Hello Kubernetes bootcamp! | Running on: k8s-workshop-6d64485df4-dbpnz | v=1
 ```
 
 Now we need to make the application available to the outer world. 
@@ -49,7 +49,7 @@ Please take a look at [8-ingress.yaml](8-ingress.yaml) for the description of ou
 
 ```
 $ k run web2 --image=gcr.io/google-samples/hello-app:2.0 --port=8080
-$ k expose deployment web2 --target-port=8080 --type=NodePort
+$ k expose deployment web2 --target-port=8080
 ```
 
 ### Challenges 

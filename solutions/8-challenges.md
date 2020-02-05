@@ -1,7 +1,7 @@
 # Apply the ingress to the cluster
 ```
 $ k apply -f 8-ingress.yaml
-ingress.networking.k8s.io/k8s-workshop-ingress created
+ingress.networking.k8s.io/k8s-workshop created
 ```
 
 # Find the exposed IP-address and invoke it (hint; use `minikube` command or dashboard)
@@ -32,7 +32,7 @@ $ k describe ingress
 
 ```
 $ k run web2 --image=gcr.io/google-samples/hello-app:2.0 --port=8080
-$ k expose deployment web2 --target-port=8080 --type=NodePort
+$ k expose deployment web2 --target-port=8080
 ```
 
 # add this deploy to the ingress.yaml and apply it
@@ -46,4 +46,4 @@ $ k expose deployment web2 --target-port=8080 --type=NodePort
               servicePort: 8080
 ```
 
-# find the two different ``curl`` commands to run to hit the two different deploys
+# find the two different `curl` commands to run to hit the two different deploys
