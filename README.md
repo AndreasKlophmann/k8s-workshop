@@ -19,6 +19,6 @@ Kubernetes workshop
 6. [Delete pods and deployment](./6-delete-resources.md)
 7. [Understanding services](./7-services.md)
 8. [Ingress](./8-ingress.md)
-9. Rolling updates / scaling etc
+9. [Rolling updates / scaling etc](./9-rolling.md)
 10. Extras - livenessProbe/readinessProbe, affinity
 
