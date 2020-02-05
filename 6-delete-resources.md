@@ -28,7 +28,7 @@ output from the following command:
 
 ```
 $ k describe pods | grep Controlled
-Controlled By:  ReplicaSet/kubernetes-bootcamp-6d64485df4
+Controlled By:  ReplicaSet/k8s-workshop-7c6db8dfd6
 ```
 
 ### The ReplicaSet
@@ -38,15 +38,15 @@ We can query it for info:
 
 ```
 $ k describe replicasets
-Name:           kubernetes-bootcamp-6d64485df4
+Name:           k8s-workshop-7c6db8dfd6
 Namespace:      default
-Selector:       app=kubernetes-bootcamp,pod-template-hash=6d64485df4
-Labels:         app=kubernetes-bootcamp
-                pod-template-hash=6d64485df4
+Selector:       app=k8s-workshop,pod-template-hash=7c6db8dfd6
+Labels:         app=k8s-workshop
+                pod-template-hash=7c6db8dfd6
 Annotations:    deployment.kubernetes.io/desired-replicas: 1
                 deployment.kubernetes.io/max-replicas: 2
-                deployment.kubernetes.io/revision: 2
-Controlled By:  Deployment/kubernetes-bootcamp
+                deployment.kubernetes.io/revision: 1
+Controlled By:  Deployment/k8s-workshop
 Replicas:       1 current / 1 desired
 Pods Status:    1 Running / 0 Waiting / 0 Succeeded / 0 Failed
 ...
@@ -63,7 +63,7 @@ recreated them for us. So something must be controlling it:
 
 ```
 $ k describe replicasets | grep Controlled
-Controlled By:  Deployment/kubernetes-bootcamp
+Controlled By:  Deployment/k8s-workshop
 ```
 
 ### Deployment again
@@ -86,6 +86,6 @@ $ k get pods
 
 ## 2. Challenges
 
-* Redeploy the app using the descriptor `4-kubernetes-bootcamp.yaml`
+* Redeploy the app using the descriptor `4-deploy-app.yaml`
 * Change the replica count to 0 and re-apply the deployment. What happens?
 * Change the replica count to 10. What happens?

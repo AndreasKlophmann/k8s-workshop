@@ -45,7 +45,7 @@ even open an interactive terminal:
 
 ```
 $ k exec <podname> -- uname -a
-Linux kubernetes-bootcamp-69fbc6f4cf-92sqx 4.19.81 #1 SMP Tue Dec 10 16:09:50 PST 2019 x86_64 GNU/Linux
+Linux k8s-workshop-7c6db8dfd6-snsfc 4.19.81 #1 SMP Tue Dec 10 16:09:50 PST 2019 x86_64 GNU/Linux
 ```
 
 Opening a shell requires the `-i` and `-t` option to attach stdin and treat it as a tty:
