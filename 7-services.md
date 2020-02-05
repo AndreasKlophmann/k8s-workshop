@@ -14,13 +14,13 @@ loose coupling of pods to enable load balancing, discovery and routing.
 We can expose our application as a service using `kubectl expose`:
 
 ```
-$ k expose deploy kubernetes-bootcamp
+$ k expose deploy k8s-workshop
 ```
 
 We could also expose our service using the deployment descriptor from section 4:
 
 ```
-$ k expose -f 4-kubernetes-bootcamp.yaml
+$ k expose -f 4-deploy-app.yaml
 ```
 
 ### Challenges
@@ -37,28 +37,28 @@ This way we can achieve both load balancing and high availability!
 
 ```
 $ k get services
-NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
-kubernetes            ClusterIP   10.96.0.1      <none>        443/TCP    7d9h
-kubernetes-bootcamp   ClusterIP   10.96.80.156   <none>        8080/TCP   159m
+NAME           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+k8s-workshop   ClusterIP   10.96.236.62   <none>        8080/TCP   7m54s
+kubernetes     ClusterIP   10.96.0.1      <none>        443/TCP    8d
 ```
 
 We can access the virtual IP either from a pod inside the cluster or using the `kubectl proxy` command.
 
 ```
 $ k proxy
-$ curl http://localhost:8001/api/v1/namespaces/default/services/kubernetes-bootcamp/proxy/
+$ curl http://localhost:8001/api/v1/namespaces/default/services/k8s-workshop/proxy/
 ```
 
 Or alternatively from inside the cluster using the minikube pod:
 
 ```
 $ minikube ssh
-$ curl http://10.96.80.156:8080
+$ curl http://<IP-ADDRESS>:8080
 ```
 
 ### Challenges
 
-* Scale our deployment to 2 pods (hint: see `7-kubernetes-bootcamp.yaml`)
+* Scale our deployment to 2 pods (hint: see `7-services.yaml`)
 * With the logs of both pods open in separated windows, invoke the service IP and observe what happens
 
 ## 3. Manifest files
@@ -105,16 +105,16 @@ DESCRIPTION:
 
 ## 4. Selectors
 
-If we take a look at the sample manifest file in `7-kubernetes-bootcamp.yaml` we can see that the only thing 
+If we take a look at the sample manifest file in `7-services.yaml` we can see that the only thing 
 connecting the service definition to deployment definition is the line below `selectors` in the service which 
 is identical to the first line under `labels` in the deployment:
 
 ```
 labels:
-  app: kubernetes-bootcamp
+  app: k8s-workshop
 ---
 selector:
-  app: kubernetes-bootcamp
+  app: k8s-workshop
 ```
 
 The service selector tells kubernetes which pods to include in the service. This selector-based mechanism is used by 
@@ -125,7 +125,7 @@ rolling updates (which we will see later) and similar things.
 You can use selectors to filter the results in many `kubectl` commands using the `--selector=` og just `-l`:
 
 ```
-$ k get pods -l app=kubernetes-bootcamp
+$ k get pods -l app=k8s-workshop
 ```
 
 ### Challenges
