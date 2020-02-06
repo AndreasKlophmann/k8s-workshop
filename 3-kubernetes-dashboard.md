@@ -53,9 +53,9 @@ $ minikube dashboard
 ```
 This should open the dashboard in your browser. 
 
-If you want to look at the dashboard outside of minikube the command is:
+If you want to look at the dashboard when not using minikube the command is:
 ```
-$ k proxy
+$ k proxy --context <context>
 ```
 And then open your browser on this url:
 http://localhost:8001/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default
