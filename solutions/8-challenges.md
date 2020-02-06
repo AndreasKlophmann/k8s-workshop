@@ -4,16 +4,14 @@ $ k apply -f 8-ingress.yaml
 ingress.networking.k8s.io/k8s-workshop created
 ```
 
-# Find the exposed IP-address and invoke it (hint; use `minikube` command or dashboard)
+# Find the exposed IP-address and invoke it (hint: describe the ingress)
 ```
-$ minikube ip
-192.168.64.5
-
-$ sudo vim /etc/hosts # add the ip-address to the host
-192.168.64.5 k8s-workshop.local # add this to the end of the file
+$ k get ingresses
+NAME           HOSTS   ADDRESS        PORTS   AGE
+k8s-workshop   *       192.168.64.3   80      27h
 ```
 Open the browser and try this url:
-`http://k8s-workshop.local`
+`http://192.168.64.3`
 
 # Explore the ingress in the Kubernetes Dashboard
 ```

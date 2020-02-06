@@ -40,7 +40,7 @@ Please take a look at [8-ingress.yaml](8-ingress.yaml) for the description of ou
 ### Challenges
 
 * Apply the ingress to the cluster
-* Find the exposed IP-address and invoke it (hint; use `minikube` command or dashboard)
+* Find the exposed IP-address and open it in the browser (hint: use kubectl to get or describe the ingress)
 * Explore the ingress in the Kubernetes Dashboard
 * Use the `k describe ingress` to find the path and backends for your ingress
 
@@ -53,5 +53,5 @@ $ k expose deployment web2 --target-port=8080
 ```
 
 ### Challenges 
-* add this deploy to the ingress.yaml and apply it
+* add this deploy to the ingress.yaml under a different path and apply it
 * find the two different ``curl`` commands to run to hit the two different deploys
