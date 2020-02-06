@@ -11,6 +11,7 @@ Kubernetes workshop
 
 ## Workshop steps
 
+0. [Introduction to Kubernetes](./0-introduction.md)
 1. [Install required components](./1-installation.md)
 2. [Query kubernetes cluster for info](./2-kubernetes-cluster.md)
 3. [Get kubernetes dashboard running](./3-kubernetes-dashboard.md)
