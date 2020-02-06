@@ -36,7 +36,7 @@ To view something in a specific namespace you need to add the `--namespace` opti
 
 You can set a default namespace for the current context:
 ```
-$ k config set-context $(k config current-context) --namespace=my-namespace
+$ k config set-context $(k config current-context) --namespace=default
 ```
 
 ## 3. Kubernetes dashboard
