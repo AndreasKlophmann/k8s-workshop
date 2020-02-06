@@ -15,6 +15,8 @@ Kubernetes is container orchestration framework that helps us running containeri
 
 https://kubernetes.io/docs/concepts/overview/components/
 
+![k8s components](components-of-kubernetes.png)
+
 The three main types of components in Kubernetes cluster:
 
 * **Kubernetes control plane componenets** which is the control center of kubernetes and where all the centralized decisions of the cluster is being made. Typically runs on a separate node.
