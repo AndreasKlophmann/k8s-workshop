@@ -20,5 +20,5 @@ Kubernetes workshop
 7. [Understanding services](./7-services.md)
 8. [Ingress](./8-ingress.md)
 9. [Rolling updates / scaling etc](./9-rolling.md)
-10. Extras - livenessProbe/readinessProbe, affinity
+10. [Extras](./10-extras.md)
 
